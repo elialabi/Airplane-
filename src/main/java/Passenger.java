@@ -1,13 +1,24 @@
+import java.util.ArrayList;
+
 public class Passenger {
     private String name;
     private int ID;
     private String email;
+    private ArrayList<Airplane> flights;
 
     public Passenger(String name, int ID, String email){
         this.name = name;
         this.ID = ID;
         this.email = email;
+        this.flights = new ArrayList<>();
     }
+
+
+
+
+
+
+
 
     public String getName() {
         return name;
