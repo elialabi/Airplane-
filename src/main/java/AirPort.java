@@ -27,21 +27,41 @@ public class AirPort {
         this.airplanes.remove(airplane);
     }
 
+    public void displayFlights(){
+        for(Airplane airplane : this.airplanes){
+            System.out.println(airplane.getDestination() + " " + airplane.getID());
+
+        }
+    }
+
 
 
 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Airplane airplane1;
+        Airplane airplane2;
+        Airplane airplane3;
+
+        airplane1 = new Airplane("France", 32);
+        airplane2 = new Airplane("Peru", 40);
+        airplane3 = new Airplane("Japan", 60);
+
+        AirPort airPort = new AirPort();
 
 
-        int answer = 1;
-        System.out.println("Would you like to see all available flights? if so, press 1. If not press any other number");
+
+
+
+
+        String answer = "yes";
+        System.out.println("Would you like to see all available flights yes/no?");
         while(true){
             String input = scanner.nextLine();
             try{
-                if( Integer.parseInt(input) == 1) {
-                    System.out.println("Flight1 to France ID: 30, Flight2 to Peru ID: 40,Flight3 to Japan ID: 60");
+                if(input.equals(answer)) {
+                  airPort.displayFlights();
                     break;
                 }
                 else {
